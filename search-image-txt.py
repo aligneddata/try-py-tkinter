@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import messagebox, ttk
 
 # Simulating a function that searches for a keyword and returns results
 def search(keyword):
@@ -35,11 +35,17 @@ def on_listbox_select(event):
 root = tk.Tk()
 root.title("Search Application")
 
-# Search entry and button
+# Quit and Search button
+top_frame = ttk.Frame(root)
+quit_button = tk.Button(top_frame, text="Quit", command=root.destroy)
+quit_button.pack(side=tk.LEFT, padx=10, pady=5)
+search_button = tk.Button(top_frame, text="Search", command=on_search)
+search_button.pack(side=tk.RIGHT, padx=10, pady=5)
+top_frame.pack()
+
+# Search Entry (search inputbox)
 search_entry = tk.Entry(root, width=50)
-search_entry.pack(side=tk.TOP, fill=tk.X, padx=10, pady=10)
-search_button = tk.Button(root, text="Search", command=on_search)
-search_button.pack(side=tk.TOP, padx=10, pady=5)
+search_entry.pack(side=tk.TOP, fill=tk.X, padx=10, pady=10, expand=True)
 
 # Listbox for search results
 listbox = tk.Listbox(root)
