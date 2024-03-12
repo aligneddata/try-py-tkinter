@@ -46,12 +46,12 @@ listbox = tk.Listbox(root)
 listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 listbox.bind('<<ListboxSelect>>', on_listbox_select)
 
-# Text viewer for displaying full text
-text_viewer = tk.Text(root, state=tk.DISABLED)
-text_viewer.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True)
-
 # Canvas for image viewer, note: actual image display code is not implemented
 image_viewer = tk.Canvas(root, bg='gray')
 image_viewer.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True)
+
+# Text viewer for displaying full text
+text_viewer = tk.Text(root, state=tk.DISABLED)
+text_viewer.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True)
 
 root.mainloop()
